@@ -2,7 +2,7 @@ const knex = require('knex')
 const app = require('../src/app')
 const helpers = require('./test-helpers')
 
-describe('Reviews Endpoints', function() {
+describe('Reviews Endpoints', function () {
   let db
 
   const {
@@ -25,6 +25,7 @@ describe('Reviews Endpoints', function() {
   afterEach('cleanup', () => helpers.cleanTables(db))
 
   describe(`POST /api/reviews`, () => {
+
     beforeEach('insert things', () =>
       helpers.seedThingsTables(
         db,
@@ -33,7 +34,7 @@ describe('Reviews Endpoints', function() {
       )
     )
 
-    it(`creates an review, responding with 201 and the new review`, function() {
+    it(`creates an review, responding with 201 and the new review`, function () {
       this.retries(3)
       const testThing = testThings[0]
       const testUser = testUsers[0]
